@@ -1,0 +1,23 @@
+<section id="experience" class="section-shell">
+  <div class="section-heading reveal-up">
+    <p>Experience</p>
+    <h2>Building Systems That Scale in Production</h2>
+  </div>
+
+  <div class="experience-grid">
+    @for (item of experiences; track item.company + '|' + item.role + '|' + item.duration) {
+      <app-section-card
+        class="reveal-up delay-1"
+        [title]="item.company"
+        [subtitle]="item.role + ' | ' + item.duration"
+        icon="fa-solid fa-briefcase"
+      >
+        <ul>
+          @for (work of item.responsibilities; track work) {
+            <li>{{ work }}</li>
+          }
+        </ul>
+      </app-section-card>
+    }
+  </div>
+</section>

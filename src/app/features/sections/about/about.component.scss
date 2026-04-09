@@ -1,0 +1,17 @@
+.about-card {
+  border: 1px solid var(--card-border);
+  border-radius: 1rem;
+  background: var(--card-bg);
+  box-shadow: var(--elevated-shadow);
+  padding: 1.3rem;
+}
+
+.about-card p {
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.about-card p + p {
+  margin-top: 0.9rem;
+}

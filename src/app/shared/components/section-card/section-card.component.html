@@ -1,0 +1,16 @@
+<article class="section-card reveal-up">
+  <header class="card-header">
+    @if (icon()) {
+      <i [class]="icon()"></i>
+    }
+    <div>
+      <h3>{{ title() }}</h3>
+      @if (subtitle()) {
+        <p>{{ subtitle() }}</p>
+      }
+    </div>
+  </header>
+  <div class="card-content">
+    <ng-content></ng-content>
+  </div>
+</article>

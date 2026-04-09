@@ -1,0 +1,45 @@
+.achievement-grid {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.achievement {
+  display: block;
+  border-radius: 1rem;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  padding: 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  color: var(--text-main);
+  transition: transform 180ms ease, border-color 180ms ease;
+}
+
+.achievement:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-soft);
+}
+
+.achievement i {
+  font-size: 1.3rem;
+  color: var(--accent-strong);
+}
+
+.achievement p {
+  margin: 0.75rem 0 0;
+  color: var(--text-main);
+}
+
+.achievement span {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 840px) {
+  .achievement-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,19 @@
+.chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid var(--card-border);
+  padding: 0.35rem 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-main);
+  background: var(--chip-bg);
+  transition: all 200ms ease;
+}
+
+.chip.active,
+.chip:hover {
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  border-color: transparent;
+}

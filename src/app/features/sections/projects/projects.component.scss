@@ -1,0 +1,89 @@
+.filter-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.filter-wrap button {
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  background: var(--card-bg);
+  color: var(--text-muted);
+  padding: 0.4rem 0.85rem;
+  cursor: pointer;
+}
+
+.filter-wrap button.active,
+.filter-wrap button:hover {
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  border-color: transparent;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+app-section-card {
+  display: block;
+}
+
+.description {
+  color: var(--text-muted);
+  margin: 0 0 1rem;
+  line-height: 1.55;
+}
+
+.highlights {
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.65rem;
+  color: var(--text-muted);
+}
+
+.highlights li {
+  position: relative;
+  padding-left: 1.1rem;
+}
+
+.highlights li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6rem;
+  width: 0.38rem;
+  height: 0.38rem;
+  border-radius: 50%;
+  background: var(--accent-strong);
+}
+
+.stack {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.github-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--card-border);
+  border-radius: 0.7rem;
+  padding: 0.45rem 0.75rem;
+  text-decoration: none;
+  color: var(--text-main);
+  transition: all 200ms ease;
+  margin-top: auto;
+}
+
+.github-btn:hover {
+  border-color: var(--accent-soft);
+  color: var(--accent-strong);
+}

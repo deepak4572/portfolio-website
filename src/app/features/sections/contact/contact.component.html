@@ -1,0 +1,65 @@
+<section id="contact" class="section-shell">
+  <div class="section-heading reveal-up">
+    <p>Contact</p>
+    <h2>Get in Touch</h2>
+  </div>
+
+  <div class="contact-layout">
+    <div class="contact-grid">
+      @for (item of contacts; track item.label) {
+        <a class="contact-item reveal-up delay-1" [href]="item.href" target="_blank" rel="noreferrer">
+          <i [class]="item.icon"></i>
+          <div>
+            <p>{{ item.label }}</p>
+            <span>{{ item.value }}</span>
+          </div>
+        </a>
+      }
+    </div>
+
+    <form class="contact-form reveal-up delay-2" [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+      <label for="contact-name">Name</label>
+      <input id="contact-name" type="text" formControlName="name" placeholder="Your full name" />
+      @if (contactForm.controls.name.touched && contactForm.controls.name.hasError('required')) {
+        <small class="field-error">Name is required.</small>
+      }
+
+      <label for="contact-email">Email</label>
+      <input id="contact-email" type="email" formControlName="email" placeholder="you@example.com" />
+      @if (contactForm.controls.email.touched && contactForm.controls.email.hasError('required')) {
+        <small class="field-error">Email is required.</small>
+      }
+      @if (contactForm.controls.email.touched && contactForm.controls.email.hasError('email')) {
+        <small class="field-error">Please enter a valid email address.</small>
+      }
+
+      <label for="contact-message">Message</label>
+      <textarea
+        id="contact-message"
+        rows="5"
+        formControlName="message"
+        placeholder="Tell me about your idea or opportunity"
+      ></textarea>
+      @if (contactForm.controls.message.touched && contactForm.controls.message.hasError('required')) {
+        <small class="field-error">Message is required.</small>
+      }
+
+      <button type="submit" [disabled]="isSubmitting || contactForm.invalid">
+        @if (isSubmitting) {
+          <span class="button-loader"></span>
+          <span>Sending...</span>
+        } @else {
+          <span>Send Message</span>
+        }
+      </button>
+
+      @if (submitStatus === 'success') {
+        <p class="feedback success" role="status">{{ feedbackMessage }}</p>
+      }
+
+      @if (submitStatus === 'error') {
+        <p class="feedback error" role="alert">{{ feedbackMessage }}</p>
+      }
+    </form>
+  </div>
+</section>

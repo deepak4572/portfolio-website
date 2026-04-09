@@ -1,0 +1,16 @@
+<section id="profiles" class="section-shell">
+  <div class="section-heading reveal-up">
+    <p>Coding Profiles</p>
+    <h2>Competitive Programming Platforms</h2>
+  </div>
+
+  <div class="achievement-grid">
+    @for (profile of profiles; track profile.platform) {
+      <a class="achievement reveal-up delay-1" [href]="profile.href" target="_blank" rel="noreferrer">
+        <i [class]="profile.icon"></i>
+        <p>{{ profile.platform }}</p>
+        <span>{{ profile.handle }}</span>
+      </a>
+    }
+  </div>
+</section>

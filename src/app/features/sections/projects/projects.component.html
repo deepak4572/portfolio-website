@@ -1,0 +1,36 @@
+<section id="projects" class="section-shell">
+  <div class="section-heading reveal-up">
+    <p>Projects</p>
+    <h2>Selected Engineering Work</h2>
+  </div>
+
+  <div class="filter-wrap reveal-up delay-1">
+    @for (filter of filters; track filter) {
+      <button [class.active]="selectedFilter === filter" (click)="setFilter(filter)">{{ filter }}</button>
+    }
+  </div>
+
+  <div class="project-grid">
+    @for (project of filteredProjects; track project.name) {
+      <app-section-card [title]="project.name" icon="fa-solid fa-diagram-project">
+        <p class="description">{{ project.description }}</p>
+        @if (project.highlights?.length) {
+          <ul class="highlights">
+            @for (highlight of project.highlights; track highlight) {
+              <li>{{ highlight }}</li>
+            }
+          </ul>
+        }
+        <div class="stack">
+          @for (tech of project.techStack; track tech) {
+            <app-chip-badge [label]="tech"></app-chip-badge>
+          }
+        </div>
+        <a class="github-btn" [href]="project.githubUrl" target="_blank" rel="noreferrer">
+          <i class="fa-brands fa-github"></i>
+          View on GitHub
+        </a>
+      </app-section-card>
+    }
+  </div>
+</section>

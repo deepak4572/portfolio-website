@@ -1,0 +1,20 @@
+<nav class="navbar glass-panel">
+  <button class="brand" (click)="scrollTo('hero')">Deepak Chauhan</button>
+
+  <button class="mobile-toggle" aria-label="Toggle menu" (click)="toggleMenu()">
+    <i class="fa-solid" [class.fa-bars]="!menuOpen()" [class.fa-xmark]="menuOpen()"></i>
+  </button>
+
+  <ul [class.open]="menuOpen()">
+    @for (item of navItems; track item.id) {
+      <li>
+        <button (click)="scrollTo(item.id)">{{ item.label }}</button>
+      </li>
+    }
+    <li>
+      <button class="theme-toggle" (click)="themeService.toggleTheme()" aria-label="Toggle theme">
+        <i class="fa-solid" [class.fa-moon]="themeService.mode() === 'light'" [class.fa-sun]="themeService.mode() === 'dark'"></i>
+      </button>
+    </li>
+  </ul>
+</nav>

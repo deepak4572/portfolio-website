@@ -1,0 +1,20 @@
+<div class="portfolio-background" aria-hidden="true">
+  <div class="background-gradient"></div>
+  <div class="background-blob blob-one"></div>
+  <div class="background-blob blob-two"></div>
+  <div class="background-blob blob-three"></div>
+  <div class="particle particle-one"></div>
+  <div class="particle particle-two"></div>
+  <div class="particle particle-three"></div>
+  <div class="particle particle-four"></div>
+  <div class="particle particle-five"></div>
+  <div class="particle particle-six"></div>
+</div>
+
+<div class="app-shell">
+  @if (isLoading()) {
+    <app-loader></app-loader>
+  } @else {
+    <router-outlet></router-outlet>
+  }
+</div>

@@ -1,0 +1,90 @@
+.navbar {
+  position: sticky;
+  top: 1rem;
+  z-index: 10;
+  margin: 1rem auto 0;
+  width: min(1100px, calc(100% - 2rem));
+  padding: 0.8rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  border: 0;
+  background: transparent;
+  color: var(--text-main);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+ul button {
+  border: 0;
+  background: transparent;
+  color: var(--text-muted);
+  padding: 0.45rem 0.65rem;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  transition: color 180ms ease, background 180ms ease;
+}
+
+ul button:hover {
+  color: var(--text-main);
+  background: var(--chip-bg);
+}
+
+.theme-toggle {
+  width: 2.1rem;
+  height: 2.1rem;
+  display: inline-grid;
+  place-items: center;
+  border: 1px solid var(--card-border);
+}
+
+.mobile-toggle {
+  display: none;
+  border: 0;
+  background: transparent;
+  color: var(--text-main);
+}
+
+@media (max-width: 860px) {
+  .mobile-toggle {
+    display: block;
+  }
+
+  ul {
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    top: calc(100% + 0.45rem);
+    flex-direction: column;
+    align-items: stretch;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 1rem;
+    padding: 0.8rem;
+    box-shadow: var(--elevated-shadow);
+    transform-origin: top;
+    transform: scaleY(0.95);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 180ms ease;
+  }
+
+  ul.open {
+    transform: scaleY(1);
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
