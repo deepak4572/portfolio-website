@@ -12,6 +12,12 @@
       </li>
     }
     <li>
+      <button class="download-resume" (click)="downloadResume()" aria-label="Download resume">
+        <i class="fa-solid fa-download"></i>
+        <span>Resume</span>
+      </button>
+    </li>
+    <li>
       <button class="theme-toggle" (click)="themeService.toggleTheme()" aria-label="Toggle theme">
         <i class="fa-solid" [class.fa-moon]="themeService.mode() === 'light'" [class.fa-sun]="themeService.mode() === 'dark'"></i>
       </button>
